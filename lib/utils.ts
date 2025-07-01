@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { interviewCovers, mappings } from "@/firebase/constants";
+=======
+import { interviewCovers, mappings } from "@/constants";
+>>>>>>> c13103a020a941f140b22807872a25863a574353
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 

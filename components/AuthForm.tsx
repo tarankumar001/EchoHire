@@ -88,7 +88,6 @@ const AuthForm = ({ type }: { type: FormType }) => {
 
                 toast.success("Signed in successfully.");
                 router.push("/"); // ✅ your desired redirect
-
             }
         } catch (error) {
             console.log(error);
