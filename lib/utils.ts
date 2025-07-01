@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { interviewCovers, mappings } from "@/firebase/constants";
-=======
-import { interviewCovers, mappings } from "@/constants";
->>>>>>> c13103a020a941f140b22807872a25863a574353
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -20,7 +16,7 @@ const normalizeTechName = (tech: string) => {
 const checkIconExists = async (url: string) => {
   try {
     const response = await fetch(url, { method: "HEAD" });
-    return response.ok; // Returns true if the icon exists
+    return response.ok;
   } catch {
     return false;
   }
@@ -36,15 +32,13 @@ export const getTechLogos = async (techArray: string[]) => {
   });
 
   const results = await Promise.all(
-      logoURLs.map(async ({ tech, url }) => ({
-        tech,
-        url: (await checkIconExists(url)) ? url : "/tech.svg",
-      }))
+    logoURLs.map(async ({ tech, url }) => ({
+      tech,
+      url: (await checkIconExists(url)) ? url : "/tech.svg",
+    }))
   );
 
-
   return results;
-
 };
 
 export const getRandomInterviewCover = () => {
